@@ -17,6 +17,7 @@ const Summary = () => {
     bkashTransactionId: "",
     nagadTransactionId: "",
     phoneNumber: "",
+    address: "",
   });
 
   const handleChange = (e) => {
@@ -49,9 +50,15 @@ const Summary = () => {
       bkashId: formData.bkashTransactionId,
       nagadId: formData.nagadTransactionId,
       phoneNumber: formData.phoneNumber,
+      address: formData.address,
     });
 
+    if (response){
+      toast.success("Your order has been recieved. You will be redirected to the Homepage."); 
+    }
+
     window.location = response.data.url;
+   
   }
 
   return (
@@ -64,6 +71,18 @@ const Summary = () => {
         </div>
         <div className="max-w-md mx-auto mt-5 p-5 bg-white rounded shadow-lg">
           <form>
+          <div className="mb-4">
+              <label className="block mb-2 text-gray-800" htmlFor="phoneNumber">
+                Bkash and Nagad
+              </label>
+              <p>
+               <b> 01834233361 </b>(Bkash personal)
+              </p>
+              <hr className="my-4" />
+              <p>
+              <b> 01834233361 </b>(Nagad personal)
+              </p>
+            </div>
             <div className="mb-4">
               <label
                 className="block mb-2 text-gray-800"
@@ -112,6 +131,21 @@ const Summary = () => {
                 placeholder="Enter your phone number"
               />
             </div>
+            <div className="mb-4">
+              <label className="block mb-2 text-gray-800" htmlFor="phoneNumber">
+                Address
+              </label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border rounded"
+                placeholder="Enter the address of delivery"
+              />
+            </div>
+            
           </form>
         </div>
       </div>

@@ -82,6 +82,12 @@ const Summary = () => {
               <p>
               <b> 01834233361 </b>(Nagad personal)
               </p>
+              <hr className="my-4" />
+              <p>
+              After payment, enter the transaction id in the given form and press the checkform, You wil be returned to homepage if the order is revieved successfully.
+              </p>
+
+              <hr className="my-4" />
             </div>
             <div className="mb-4">
               <label
